@@ -1,16 +1,14 @@
-$version: "1.0.0";
-
-@import url(../vendor/lato/css/lato.min.css);
+$version: "1.1";
 
 /*! naked.css v#{$version} | MIT License | xinix.co.id */
 
-@import 'include/normalize';
 @import 'include/variables';
 @import 'include/grid';
 @import 'include/globals';
 @import 'include/table';
 @import 'include/form';
 @import 'include/button';
+@import 'include/badge';
 @import 'include/pagination';
 @import 'include/listview';
 @import 'include/navbar-tabstrip';
@@ -21,4 +19,3 @@ $version: "1.0.0";
 @import 'include/login';
 @import 'include/context-menu';
 @import 'include/sidebar';
-@import 'include/popup';

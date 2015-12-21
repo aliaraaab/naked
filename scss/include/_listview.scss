@@ -1,17 +1,7 @@
 .listview,
 .listview * {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-moz-background-clip: border-box;
-	-webkit-background-clip: border-box;
-	background-clip: border-box;
-}
-.listview:not>li:first-child {
-	border-top: 0;
-}
-.listview>li.list-group-container {
-	border: 0;
+	@include box-sizing(border-box);
+	@include background-clip(border-box);
 }
 .listview {
 	width: 100%;
@@ -19,52 +9,90 @@
 	margin: 0;
 	list-style: none;
 
+	h5 {
+		font-size: 0.8em;
+		letter-spacing: 0.032em;
+		text-transform: uppercase;
+		padding-left: #{$grid * 3};
+		color: #{$grouptitle-color};
+		margin-bottom: 7px;
+	}
+
+	a {
+		position: relative;
+		float: left;
+		padding: #{$grid * 2} #{$grid * 9} #{$grid * 2} #{$grid * 3};
+		width: 100%;
+		color: #{$black};
+		font-size: 1.1em;
+		line-height: 1.2em;
+		cursor: pointer;
+		@include transform-style(preserve-3d);
+
+		&:hover {
+			background: $bg-hover;
+		}
+
+		.xn,
+		.swipe {
+			position: absolute;
+			right: #{$grid * 3};
+			top: 50%;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	a,
+	span,
+	small {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	span,
+	small {
+		width: 100%;
+		font-weight: #{$font-light};
+	}
+	small {
+		font-size: 0.9em;
+		letter-spacing: #{$letter-spacing-wide};
+	}
+
+	&:not > li:first-child {
+		border-top: 0;
+	}
+
 	li {
 		line-height: #{$body-line-height};
 		overflow: hidden;
 		margin: 0;
 		display: block;
 		position: relative;
-		vertical-align: middle;
 		border-bottom: 1px solid #{$border-color};
-		border-width: 0 0 1px 0;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
 
-		img, .icon {
+		&.list-group-container {
+			border: 0;
+		}
+
+		img,
+		.icon {
 			width: #{$img-icon-width};
 			height: #{$img-icon-height};
 			float: left;
-			margin-right: 10px;
+			margin-right: #{$grid * 2};
 		}
-		img.picture {
+		.picture {
 			width: #{$img-picture-width};
 			height: #{$img-picture-height};
 			margin-right: 0;
 		}
-		img.image {
+		.image {
 			width: #{$img-image-width};
 			height: #{$img-image-height};
 			margin-right: 0;
 		}
-
-		a {
-			font-weight: 300;
-			padding: 5px 10px;
-			margin: 0;
-			color: black;
-		}
-
-	}
-
-	h5 {
-		font-size: 0.9em;
-		text-transform: uppercase;
-		font-weight: 600;
-		padding-left: 10px;
-		color: #{$grouptitle-color};
-		margin-bottom: 7px;
 	}
 
 	.list-group {
@@ -78,81 +106,16 @@
 			padding: 0;
 			border-bottom: 1px solid #{$border-color};
 			position: relative;
-			display: inline-block;
+			display: block;
 			width: 100%;
-
-			a {
-				padding: 8px 30px 8px 8px;
-				font-size: 1.2em;
-				width: 100%;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-				float: left;
-				line-height: #{$listviewtext-line-height};
-
-				&:hover {
-					background: $bg-hover;
-				}
-			}
-
-			span {
-				line-height: #{$listviewtext-line-height};
-				width: 100%;
-				display: block;
-			}
 
 			&.plain {
 				a {
-					padding: 10px;
+					padding-right: #{$grid * 2};
 
 					&:after {
 						border: 0;
 					}
-				}
-			}
-		}
-
-		span.sub-title {
-			font-size: 0.8em;
-			color: #999;
-			width: 100%;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			line-height: 15px;
-		}
-
-		span.title-list {
-			font-size: 1.3em;
-			font-weight: 400;
-			margin-bottom: 3px;
-		}
-
-		a {
-			cursor: pointer;
-			position: relative;
-
-			i.xn {
-				position: absolute;
-				right: 10px;
-				top: 50%;
-				margin-top: -0.52rem;
-			}
-
-			&.swipe-toggle {
-				padding: 14px 70px 14px 10px;
-
-				input.swipe {
-					position: absolute;
-					right: 10px;
-					z-index: 9;
-					top: 50%;
-					margin-top: -0.95rem;
-				}
-
-				&:after {
-					border: 0;
 				}
 			}
 		}
@@ -167,19 +130,13 @@
 			span {
 				float: left;
 				width: auto;
-				font-weight: 300;
 				max-width: 49%;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-			}
-			span.side {
-				float: right;
-				color: #999;
-				max-width: 35%;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
+
+				&.side {
+					float: right;
+					color: adjust-lightness($color, 48%);
+					max-width: 35%;
+				}
 			}
 		}
 	}
@@ -194,17 +151,6 @@
 				margin-top: 6px;
 				margin-right: -19px;
 			}
-		}
-	}
-
-	ul.nested {
-		padding-left: 20px;
-		float: left;
-		width: 100%;
-		border-top: 1px solid #{$border-color};
-
-		li:last-child {
-			border-bottom: 0;
 		}
 	}
 
@@ -232,7 +178,8 @@
 				padding: 12px 30px 12px 60px;
 
 				img {
-					top: 14px;
+					top: 50%;
+					@include transform(translateY(-50%));
 				}
 			}
 		}
@@ -255,9 +202,15 @@
 			}
 		}
 	}
+
+	ul.nested {
+		padding-left: 20px;
+		float: left;
+		width: 100%;
+		border-top: 1px solid #{$border-color};
+
+		li:last-child {
+			border-bottom: 0;
+		}
+	}
 }
-
-
-
-
-

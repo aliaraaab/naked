@@ -5,3 +5,5 @@ project.sublime-*
 vendor/*
 naked.sublime-project
 naked.sublime-workspace
+.nide
+.DS_Store

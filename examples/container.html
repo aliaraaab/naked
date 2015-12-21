@@ -3,146 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Naked CSS</title>
-    <link rel="stylesheet" href="../css/naked.min.css">
-    <link rel="stylesheet" href="../vendor/jacket-awesome/jacket-awesome.css">
+    <link rel="stylesheet" href="../vendor/jacket-awesome/dist/css/jacket-awesome.css">
     <link rel="stylesheet" href="../vendor/google-code-prettify/bin/prettify.min.css">
     <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
-    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/naked.min.css">
+    <link rel="stylesheet" href="../css/docs.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <script type="text/javascript" charset="utf-8" src="../vendor/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     <!-- NAVBAR -->
     <nav class="nav-menu">
-        <div class="wrapper">
-            <div class="row">
-                <div class="pull-left">
-                    <h1 class="brand">
-                        <a href="index.html">
-                            <span class="logo">
-                                <img src="../img/xinix-logo.png" alt="">
-                            </span>
-                            <span>Naked CSS</span>
-                        </a>
-                    </h1>
-                </div>
-            </div>
+        <div class="pull-left">
+            <h1 class="brand">
+                <a href="index.html">
+                    <span class="logo">
+                        <img src="../img/naked.png" alt="Naked CSS" />
+                    </span>
+                    <span>Naked CSS</span>
+                </a>
+            </h1>
         </div>
     </nav>
     <!-- END OF NAVBAR -->
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-        <ul class="nav">
-            <li>
-                <a href="grid-system.html">
-                    Grid System
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a class="select" href="container.html">
-                    Container
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="form.html">
-                    Form
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="button.html">
-                    Button
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="table.html">
-                    Table
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="sidebar.html">
-                    Sidebar
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="navbar-tabstrip.html">
-                    Navbar &amp; Tabstrip
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="popup.html">
-                    Popup
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="listview.html">
-                    List View
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="typography.html">
-                    Typography
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="icon-layout.html">
-                    Icons &amp; Layout
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="alert.html">
-                    Alert
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="tooltip-dropdown.html">
-                    Tooltip & Dropdown
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="pagination.html">
-                    Pagination
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="login.html">
-                    Login
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="tree.html">
-                    Tree
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="tabs.html">
-                    Tabs
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="context-menu.html">
-                    Context Menu
-                    <i class="icn-right xn xn-angle-right"></i>
-                </a>
-            </li>
-        </ul>
+        <script type="text/javascript">
+            $("aside.sidebar").load("aside.html", function() {
+                var docname = window.location.href;
+                docname = docname.split("/");
+            });
+        </script>
+        <!-- NAVBAR -->
+        <nav class="nav-menu">
+            <div class="pull-left">
+                <h1 class="brand">
+                    <a href="index.html">
+                        <span class="logo">
+                            <img src="../img/naked.png" alt="Naked CSS" />
+                        </span>
+                        <span>Naked CSS</span>
+                    </a>
+                </h1>
+            </div>
+        </nav>
+        <!-- END OF NAVBAR -->
     </aside>
     <!-- END OF SIDEBAR -->
 
@@ -150,13 +55,16 @@
     <main class="content">
         <div class="wrapper">
             <h1 class="title">Container</h1>
-            <hr>
+            <p>Container is the basic shape of your Interface. When creating a website, there will be only 2 type of container.</p>
+            <hr />
+            <h4 class="sub-title">Fixed-width Container</h4>
+            <p>The first one is the <strong>fixed-width</strong> container, where the website have spesific width. This container help to retain all the design shape, and it's the esiest form to shape a website.</p>
             <ul>
-                <li>On the Extra Large Screen, Container Fix width is <b>1320px</b>.</li>
-                <li>On the Large Screen, Container Fix width is <b>984px</b>.</li>
-                <li>On the Medium Screen, Container Fix width is <b>728px</b>.</li>
-                <li>On the Small Screen, Container Fix width is <b>440px</b>.</li>
-                <li>On the Tiny Screen, Container Fix width is <b>100%</b>.</li>
+                <li>On the Extra Large Screen, fixed-width container will have <strong>1320px</strong> in width.</li>
+                <li>On the Large Screen, fixed-width container will have <strong>984px</strong> in width.</li>
+                <li>On the Medium Screen, fixed-width container will have <strong>728px</strong> in width.</li>
+                <li>On the Small Screen, fixed-width container will have <strong>440px</strong> in width.</li>
+                <li>On the Tiny Screen, fixed-width container will have <strong>100%</strong> in width.</li>
             </ul>
             <div class="html">
                 <div class="highlight">
@@ -165,8 +73,9 @@
                     </pre>
                 </div>
             </div>
-            <h4 class="sub-title">Container Fluid</h4>
-            <p>Countainer Fluid is a <b>Container</b> whose length is <b>always 100%</b>.</p>
+            <hr />
+            <h4 class="sub-title">Fluid Container</h4>
+            <p>Fluid Countainer is a Container whose length is <strong>always 100%</strong>. This container can be used to form a website application to further maximize the use of screen spaces and fill the screen spaces with more usefull information. This container can somehow hard to maintain, because all the screen element inside this contianer will need to addapt on every size of the browser size.</p>
             <div class="html">
                 <div class="highlight">
                     <pre class="prettyprint lang-html">
@@ -174,17 +83,18 @@
                     </pre>
                 </div>
             </div>
-            <hr>
-        </div>
-        <div id="footer">
-            <p>Copyright &copy; 2014
-                <a href="http://xinix.co.id" target="_BLANK">Xinix Technology</a>. Some right(s) reserved.
-            </p>
         </div>
     </main>
-    <!-- END OF PAGE CONTENT -->
+    <!-- END OF CONTENT -->
+
+    <!-- FOOTER CONTENT -->
+    <footer>
+        <p>Copyright &copy; 2015 <a href="http://xinix.co.id" target="_BLANK">Xinix Technology</a>. Some right(s) reserved.</p>
+    </footer>
+    <!-- END OF FOOTER -->
 
     <!-- PAGE LEVEL SCRIPT -->
+    <script type="text/javascript" charset="utf-8" src="../js/tshirt.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/docs.js"></script>
     <script type="text/javascript" charset="utf-8" src="../vendor/google-code-prettify/bin/prettify.min.js"></script>
     <script type="text/javascript" charset="utf-8">
